@@ -41,32 +41,32 @@ export default function LoanWidget({ style, config, userType, environment }: Pro
   if (style === "list") {
     return (
       <div
-        className="widget-enter flex items-center justify-between py-4 px-5 border-b border-border/50"
+        className="widget-enter flex items-center justify-between py-3 px-5"
         onMouseEnter={handleHover}
         onFocus={handleHover}
         tabIndex={0}
       >
-        <div className="flex items-center gap-4">
-          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-            <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded bg-slate-100 flex items-center justify-center">
+            <svg className="w-4 h-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
           <div>
-            <p className="text-sm text-muted-foreground">Loan Eligibility</p>
-            <p className="text-xl font-semibold font-display">
+            <p className="text-xs text-slate-500">Loan Eligibility</p>
+            <p className="text-base font-semibold text-slate-900">
               <CountUp end={config.max_loan_amount} />
             </p>
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <span className={`text-xs px-2 py-0.5 rounded-full ${riskColors[config.risk_tier]}`}>
+          <span className="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">
             {config.rate_label}
           </span>
           <button
             onClick={handleApply}
             disabled={applying}
-            className="text-xs px-3 py-1.5 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors disabled:opacity-50"
+            className="text-xs px-3 py-1 rounded bg-slate-800 text-white hover:bg-slate-700 transition-colors disabled:opacity-50"
           >
             Apply Now
           </button>

@@ -96,6 +96,12 @@
   .widget-enter {
     animation: widgetSlideIn 0.4s ease-out both;
   }
+
+  /* List mode — light theme override */
+  .list-mode {
+    background: #f8fafc !important;
+    color: #1e293b !important;
+  }
 }
 
 @layer utilities {

@@ -19,14 +19,14 @@ export default function PromoWidget({ style, promoCopy, userType, environment }:
 
   if (style === "list") {
     return (
-      <div className="widget-enter flex items-center justify-between py-4 px-5 border-b border-border/50 teal-gradient/10">
-        <div className="flex items-center gap-3">
-          <span className="text-lg">✨</span>
-          <p className="text-sm font-medium">{promoCopy}</p>
+      <div className="widget-enter flex items-center justify-between py-3 px-5 bg-slate-50">
+        <div className="flex items-center gap-2">
+          <span className="text-sm">✨</span>
+          <p className="text-sm text-slate-700">{promoCopy}</p>
         </div>
         <button
           onClick={handleClick}
-          className="text-xs px-3 py-1.5 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+          className="text-xs px-3 py-1 rounded bg-slate-800 text-white hover:bg-slate-700 transition-colors"
         >
           Learn More
         </button>
