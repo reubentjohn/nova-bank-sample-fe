@@ -14,19 +14,19 @@ export default function TransactionsWidget({ style }: Props) {
   if (style === "list") {
     return (
       <div className="widget-enter">
-        <div className="py-3 px-5 border-b border-border/50">
-          <p className="text-sm text-muted-foreground tracking-wide uppercase">Recent Transactions</p>
+        <div className="py-2.5 px-5">
+          <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">Recent Transactions</p>
         </div>
         {transactions.map((t, i) => (
-          <div key={i} className="flex items-center justify-between py-3 px-5 border-b border-border/30 last:border-b-0">
-            <div className="flex items-center gap-3">
-              <span className="text-base">{t.icon}</span>
+          <div key={i} className="flex items-center justify-between py-2 px-5 border-t border-slate-100">
+            <div className="flex items-center gap-2.5">
+              <span className="text-sm">{t.icon}</span>
               <div>
-                <p className="text-sm">{t.merchant}</p>
-                <p className="text-xs text-muted-foreground">{t.date}</p>
+                <p className="text-sm text-slate-700">{t.merchant}</p>
+                <p className="text-xs text-slate-400">{t.date}</p>
               </div>
             </div>
-            <span className={`text-sm font-mono ${t.amount > 0 ? "text-primary" : ""}`}>
+            <span className={`text-sm font-mono ${t.amount > 0 ? "text-emerald-600" : "text-slate-700"}`}>
               {t.amount > 0 ? "+" : ""}${Math.abs(t.amount).toFixed(2)}
             </span>
           </div>

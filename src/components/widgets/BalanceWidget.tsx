@@ -9,21 +9,19 @@ export default function BalanceWidget({ style }: Props) {
 
   if (style === "list") {
     return (
-      <div className="widget-enter flex items-center justify-between py-4 px-5 border-b border-border/50">
-        <div className="flex items-center gap-4">
-          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-            <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <div className="widget-enter flex items-center justify-between py-3 px-5">
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded bg-slate-100 flex items-center justify-center">
+            <svg className="w-4 h-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
             </svg>
           </div>
           <div>
-            <p className="text-sm text-muted-foreground">Total Balance</p>
-            <p className="text-xl font-semibold font-display">${balance.toLocaleString("en-US", { minimumFractionDigits: 2 })}</p>
+            <p className="text-xs text-slate-500">Total Balance</p>
+            <p className="text-base font-semibold text-slate-900">${balance.toLocaleString("en-US", { minimumFractionDigits: 2 })}</p>
           </div>
         </div>
-        <div className="text-right text-xs text-muted-foreground">
-          •••• 4821
-        </div>
+        <span className="text-xs text-slate-400 font-mono">•••• 4821</span>
       </div>
     );
   }

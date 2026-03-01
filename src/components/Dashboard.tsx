@@ -39,16 +39,16 @@ export default function Dashboard({ config, userType, environment }: Props) {
   };
 
   return (
-    <div className="min-h-screen p-6 md:p-10 max-w-5xl mx-auto space-y-6">
+    <div className={`min-h-screen p-6 md:p-10 max-w-5xl mx-auto space-y-6 ${!isCard ? "list-mode" : ""}`}>
       {/* Header */}
       <div className="space-y-1 mb-8">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-8 h-8 rounded-lg teal-gradient flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-sm">N</span>
+          <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${isCard ? "teal-gradient" : "bg-slate-200"}`}>
+            <span className={`font-bold text-sm ${isCard ? "text-primary-foreground" : "text-slate-700"}`}>N</span>
           </div>
-          <span className="text-sm font-semibold tracking-wider uppercase text-muted-foreground">Nova Bank</span>
+          <span className={`text-sm font-semibold tracking-wider uppercase ${isCard ? "text-muted-foreground" : "text-slate-500"}`}>Nova Bank</span>
         </div>
-        <h1 className="text-3xl md:text-4xl font-display font-semibold tracking-tight">
+        <h1 className={`font-display font-semibold tracking-tight ${isCard ? "text-3xl md:text-4xl" : "text-2xl md:text-3xl text-slate-900"}`}>
           {dashboard.hero_copy}
         </h1>
       </div>
@@ -59,7 +59,7 @@ export default function Dashboard({ config, userType, environment }: Props) {
           {dashboard.widget_order.map((key, i) => renderWidget(key, i))}
         </div>
       ) : (
-        <div className="glass-panel-strong divide-y divide-border/30 overflow-hidden">
+        <div className="bg-white border border-slate-200 rounded-lg divide-y divide-slate-200 overflow-hidden shadow-sm">
           {dashboard.widget_order.map((key, i) => renderWidget(key, i))}
         </div>
       )}
